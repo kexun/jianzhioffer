@@ -47,7 +47,7 @@ public class Day01 {
 	
 	public static void main(String[] args) {
 
-		boolean result = contains(0, array);
+		boolean result = contains(10, array);
 		System.out.println(result);
 		
 	}

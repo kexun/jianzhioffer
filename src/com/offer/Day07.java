@@ -8,7 +8,9 @@ public class Day07 {
 //		double value = d.power(5, 5);
 //		System.out.println(value);
 		
-		d.print1ToMax(20);
+//		d.print1ToMax(4);
+		
+		d.print1ToMax2(6);
 		
 		
 	}
@@ -102,21 +104,59 @@ public class Day07 {
 		int index = 0;
 		
 		for (int i = 0; i < array.length; i++) {
-			if (array[i] != '0') {
-				index = i;
+			if (array[i] == '0') {
+				index++;
+			} else {
 				break;
 			}
 		}
-		print(array, index);
+		
+		for (int i = index; i< array.length; i++) {
+			System.out.print(array[i]);
+		}
 	}
 	
 	
-	public void print(char[] array, int index) {
+	/**
+	 * 给定一个整数n，从1打印到n位最大的数 如1  打印1-9  这里通过递归的方式
+	 * @param n
+	 */
+	public void print1ToMax2(int n) {
 		
-		if (index >= array.length)
+		if (n <= 0)
 			return;
 		
-		System.out.print(array[index]);
-		print(array, ++index);
+		char[] array = new char[n];
+		
+		for (int i = 0; i < n; i++) {
+			array[i] = '0';
+		}
+		
+		for (int i = 0; i < 10; i++) {
+			array[0] = (char) ('0' + i);
+			printRecursively(array, n, 0);
+		}
+		
 	}
+	
+	/**
+	 * 递归调用， 其实就是对n位的数组做全排列 共n的n次方-1 种可能
+	 * @param array
+	 * @param length
+	 * @param index
+	 */
+	public void printRecursively(char[] array, int length, int index) {
+		
+		if (index == length - 1) {
+			printNum(array);
+			System.out.println();
+			return;
+		}
+		
+		for (int i = 0; i < 10; i++) {
+			array[index + 1] = (char) ('0' + i);
+			printRecursively(array, length, index + 1);
+		}
+	}
+	
 }

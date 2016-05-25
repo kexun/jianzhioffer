@@ -10,8 +10,12 @@ public class Day07 {
 		
 //		d.print1ToMax(4);
 		
-		d.print1ToMax2(6);
+//		d.print1ToMax2(6);
 		
+		int[] array = {
+				10,4, 2, 50, 6,2, 8, 0, 34
+		};
+		d.reorderOddEven(array);
 		
 	}
 	
@@ -158,5 +162,49 @@ public class Day07 {
 			printRecursively(array, length, index + 1);
 		}
 	}
+	
+	/**
+	 * 奇偶互换
+	 * @param array
+	 */
+	public void reorderOddEven(int[] array) {
+		
+		if (array.length <= 1) {
+			return;
+		}
+		
+		int length = array.length;
+		int first = 0;
+		int second = length - 1;
+		
+		int firstValue = 0;
+		int secondValue = 0;
+		
+		while (first < second) {
+		
+			firstValue = array[first];
+			secondValue = array[second];
+			if ((firstValue & 1) == 0 && (secondValue & 1) == 1) {
+				array[first++] = secondValue;
+				array[second--] = firstValue;
+			}
+			
+			if ((firstValue & 1) == 1) {
+				first++;
+			}
+			
+			if ((secondValue & 1) == 0) {
+				second--;
+			}
+			
+		}
+		
+		for (int a : array) {
+			System.out.print(a);
+		}
+		
+	}
+	
+	
 	
 }

@@ -122,7 +122,7 @@ public class Day06 {
 		
 		while (n != 0) {
 			count++;
-			
+			System.out.println(Integer.toBinaryString(n));
 			n = (n - 1)&n;
 		}
 		
@@ -142,7 +142,8 @@ public class Day06 {
 		System.out.println(d.negNumberOf1(-2));
 		System.out.println(d.numberOf1(3));
 		System.out.println(d.numberOf1(4));
-		System.out.println(d.numOf1(5));
+		System.out.println(d.numOf1(-5));
+		
 	}
 
 }

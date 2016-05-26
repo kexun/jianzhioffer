@@ -34,8 +34,12 @@ public class Day08 {
 		node11.next = node12;
 		node12.next = null;
 		
-		Node n = d.findNodeToTail(head, 12);
-		System.out.println(n.data);
+//		Node n = d.findNodeToTail(head, 12);
+//		System.out.println(n.data);
+		
+		Node h = d.reverseList(head);
+		d.printList(h);
+		
 	}
 	
 	/**
@@ -70,16 +74,48 @@ public class Day08 {
 	}
 	
 	
-	
-	
-	
-	
 	class Node {
 		public int data;
 		public Node next;
 		
 		public Node(int data) {
 			this.data = data;
+		}
+	}
+	
+	public Node reverseList(Node head) {
+		
+		if (head == null || head.next == null)
+			return null;
+		
+		Node preNode = null;
+		Node nextNode = null;
+		
+		Node node = head.next;
+		while (node != null) {
+
+			nextNode = node.next;
+			if (preNode != null) {
+				node.next = preNode;
+				preNode = node;
+			} else {
+				preNode = node;
+				preNode.next = null;
+			}
+			node = nextNode;
+		}
+		
+		return preNode;
+		
+	}
+	
+	public void printList(Node head) {
+		
+		Node node = head;
+		
+		while (node != null) {
+			System.out.println(node.data);
+			node = node.next;
 		}
 	}
 

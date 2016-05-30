@@ -79,12 +79,6 @@ public class Day09 {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
 	class Tree {
 		public int data;
 		public Tree left;

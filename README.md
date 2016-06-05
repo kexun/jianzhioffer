@@ -29,3 +29,4 @@
 26. [数组中出现次数超过一半的数字](/src/com/offer/Day19.java)
 27. [数组中出现次数超过一半的数字 方法二](/src/com/offer/Day20.java)
 28. [最小的k个数字](/src/com/offer/Day21.java)
+29. [ 求连续数组的最大和](/src/com/offer/Day22.java)

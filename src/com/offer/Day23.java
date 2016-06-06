@@ -10,7 +10,7 @@ public class Day23 {
 
 	public static void main(String[] args) {
 		Day23 d = new Day23();
-		int val = d.getUglyNmu(0);
+		int val = d.getUglyNmu(1500);
 		System.out.println(val);
 	}
 	

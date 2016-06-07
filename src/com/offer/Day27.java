@@ -38,6 +38,11 @@ public class Day27 {
 		
 		int dep = d.treeDepth(head);
 		System.out.println(dep);
+		
+		MyInt depth = d.new MyInt(0);
+		boolean isBalance = d.isBalance(head, depth);
+		System.out.println(isBalance);
+		System.out.println(depth.data);
 	}
 	
 	/**
@@ -63,6 +68,48 @@ public class Day27 {
 		Node right;
 		
 		public Node(int data) {
+			this.data = data;
+		}
+	}
+	
+	/**
+	 * 判断是否是平衡二叉树，定义是：左右子树的深度差不超过1
+	 * @param tree
+	 * @param depth
+	 * @return
+	 */
+	public boolean isBalance(Node tree, MyInt depth) {
+
+		if (tree == null) {
+			depth.data = 0;
+			return true;
+		}
+		
+		MyInt left = new MyInt(0);
+		MyInt right = new MyInt(0);
+		
+		if (isBalance(tree.left, left) && isBalance(tree.right, right)) {
+			
+			Integer diff = left.data - right.data;
+			if (diff > 1 || diff < -1)
+				return false;
+			
+			depth.data = left.data>right.data ? left.data+1:right.data+1;
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * 这里值得注意的是，java并没有传引用这种方式，因此传入一个int 基本类型的时候，只
+	 * 改变他的副本，不改变实参。因此把这个int封装成一个引用类型，引用类型传递的也是副本
+	 * 不同的是，他们指向的是同一个对象。
+	 * @author kexun
+	 *
+	 */
+	class MyInt{
+		public int data;
+		public MyInt(int data) {
 			this.data = data;
 		}
 	}

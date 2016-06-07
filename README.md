@@ -34,3 +34,4 @@
 31. [第一个只出现一次的字符](/src/com/offer/Day24.java)
 32. [两个链表的公共节点](/src/com/offer/Day25.java)
 33. [数字在排序数组中出现的次数](/src/com/offer/Day26.java)
+34. [二叉树深度](/src/com/offer/Day27.java)

@@ -36,3 +36,4 @@
 33. [数字在排序数组中出现的次数](/src/com/offer/Day26.java)
 34. [二叉树深度](/src/com/offer/Day27.java)
 35. [数组中只出现一次的数字](/src/com/offer/Day28.java)
+36. [在一个递增数组中，找两个和为s的数](/src/com/offer/Day29.java)

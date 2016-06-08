@@ -15,6 +15,10 @@ public class Day30 {
 		System.out.println(str);
 		d.singleReverse(str);
 		System.out.println(str);
+		
+		StringBuffer sb = new StringBuffer("abcdefg");
+		d.leftReverse(sb, 5);
+		System.out.println(sb);
 	}
 	
 	/**
@@ -49,7 +53,20 @@ public class Day30 {
 				start = i+1;
 			}
 		}
+	}
+	
+	// 难度加大点，左旋转字符串  如： abcdef和2   结果 cdefab
+	public void leftReverse(StringBuffer sb, int index) {
 		
+		if (sb==null || sb.length()==0 || index >= sb.length())
+			return;
+		
+		int start = 0;
+		int end = sb.length()-1;
+		reverse(sb, start, end);
+		
+		reverse(sb, start, end-index);
+		reverse(sb, end-index+1, end);
 	}
 
 }

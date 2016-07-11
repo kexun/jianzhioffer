@@ -22,7 +22,7 @@ public class Day01 {
 		int value = array[x][y];
 		while (value != key) {
 			
-			if (x>=3 || y<=0) {
+			if (x>=array.length || y<=0) {
 				return false;
 			}
 			
@@ -47,7 +47,7 @@ public class Day01 {
 	
 	public static void main(String[] args) {
 
-		boolean result = contains(10, array);
+		boolean result = contains(3, array);
 		System.out.println(result);
 		
 	}

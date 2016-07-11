@@ -11,6 +11,7 @@ public class Day31 {
 		// TODO Auto-generated method stub
 		Day31 d = new Day31();
 		d.printProbability(5);
+		
 	}
 
 	public void printProbability(int num) {

@@ -2,7 +2,7 @@ package com.offer;
 
 
 /**
- * 非常简单的实现LRU算法   类似LinkedHashMap的功能，但是不实现hashtable，只维护一个双向链表，
+ * 非常简单的实现LRU算法   类似LinkedHashMap的功能，但是不实现hashmap，只维护一个双向链表，
  * 仅仅是为了验证LRU而已,这里并未考虑高并发的情况
  * @author kexun
  *
